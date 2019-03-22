@@ -12,9 +12,7 @@
 
 <body>
     <div id="app">
-
-        <!-- TODO change header text to include name of activity -->
-        <h1 class="text-center">Time Tracker</h1>
+        <h1 class="text-center"> {{ activity }}! Time Tracker </h1>
 
         <div id="add-hours" class="card">
 
@@ -27,8 +25,7 @@
                          if there are errors in the form -->
                     
                     <div class="form-group">
-                        <!-- TODO change label message to include name of activity -->
-                        <label class="form-label" for="when">When did you do this activity?</label>
+                        <label class="form-label" for="when">When did you {{ activity | lowercase }}?</label>
                         <!-- TODO v-model to app data property -->
                         <input id="when" class="form-control" type="date" >
                     </div>
@@ -36,13 +33,15 @@
                     <div class="form-group">
                         <label class="form-label" for="howLong">How long did you practice for?</label>
                         <!-- TODO v-model to app data property -->
-                        <input id="howLong" class="form-control">
+                        <input id="howLong" class="form-control" v-model="howLong">
                     </div>
 
                     <div class="form-group">
                         <label class="form-label" for="type">What type?</label>
                         <!-- TODO create a select. v-model type -->
                         <!-- TODO create one option for each type  -->
+                        <select class="form-control" v-model="type">
+                            <option v-for="type in types" v-bind:value="type"> {{ type }} </option>
                         </select>
                     </div>
 
@@ -106,7 +105,22 @@
 
     <script>
 
-      // TODO create vue app here 
+      let app = new Vue ({
+          el: "#app",
+          data: {
+              activity: 'Practice Art',
+              when: '',
+              howLong: 1,
+              type: 'sketching',
+              digitalTraditional: 'traditional',
+              activityRecords: ['sketching', 'painting', 'drawing'],
+          },
+          filters: {
+              lowercase(text) {
+                  return text.toLowerCase()
+              }
+          }
+      })
 
     </script>
 

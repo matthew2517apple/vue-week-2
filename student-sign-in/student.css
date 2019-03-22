@@ -14,3 +14,15 @@
     max-height: 500px;
     overflow: scroll;
 }
+
+.present-true {
+    font-style: italic;
+    font-size: 20px;
+    color: gray;
+}
+
+.present-false {
+    font-style: bold;
+    font-size: 30px;
+    color: purple;
+}
