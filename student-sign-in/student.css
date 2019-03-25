@@ -22,7 +22,15 @@
 }
 
 .present-false {
-    font-style: bold;
+    font-weight: bold;
     font-size: 30px;
-    color: purple;
+    color: darkred;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }
