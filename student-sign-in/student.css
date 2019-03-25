@@ -16,10 +16,20 @@
 }
 
 .present-true {
-    color: gray;
     font-style: italic;
+    font-size: 20px;
+    color: gray;
 }
 
 .present-false {
-    font-weight: bold;
+    font-size: 30px;
+    color: darkred;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
 }
